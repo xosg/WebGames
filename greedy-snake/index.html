@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greedy Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Greedy Snake</h1>
+        
+        <div class="game-header">
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">High Score:</span>
+                    <span id="high-score">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Speed:</span>
+                    <span id="speed">1</span>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                    <option value="insane">Insane</option>
+                </select>
+                <button id="new-game">New Game</button>
+                <button id="pause-game">Pause</button>
+            </div>
+        </div>
+        
+        <div id="game-canvas-container" class="game-canvas-container">
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+            <div id="game-overlay" class="game-overlay hidden">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">Game Paused</h2>
+                    <p id="overlay-message">Press SPACE or click Resume to continue</p>
+                    <button id="resume-game" class="hidden">Resume</button>
+                    <button id="restart-game" class="hidden">Play Again</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Desktop:</strong> Use arrow keys or WASD to move</p>
+            <p><strong>Mobile:</strong> Swipe in any direction to move</p>
+            <p><strong>Controls:</strong> SPACE to pause, ESC to restart</p>
+            <p><strong>Goal:</strong> Eat food to grow longer and increase your score!</p>
+        </div>
+        
+        <div class="mobile-controls">
+            <div class="dpad">
+                <button class="dpad-btn dpad-up" data-direction="up">↑</button>
+                <div class="dpad-middle">
+                    <button class="dpad-btn dpad-left" data-direction="left">←</button>
+                    <button class="dpad-btn dpad-right" data-direction="right">→</button>
+                </div>
+                <button class="dpad-btn dpad-down" data-direction="down">↓</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

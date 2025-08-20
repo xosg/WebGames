@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background: #faf8ef;
+    color: #776e65;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #776e65;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.score-container {
+    background: #bbada0;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    flex: 1;
+}
+
+.score-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+#score, #best-score {
+    font-size: 24px;
+}
+
+.game-controls {
+    margin: 20px 0;
+}
+
+#new-game, #restart-game {
+    background: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#new-game:hover, #restart-game:hover {
+    background: #9f8a76;
+}
+
+.game-board {
+    background: #bbada0;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.tile {
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    transition: all 0.15s ease-in-out;
+}
+
+.tile.tile-2 { background: #eee4da; color: #776e65; }
+.tile.tile-4 { background: #ede0c8; color: #776e65; }
+.tile.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile.tile-64 { background: #f65e3b; color: #f9f6f2; }
+.tile.tile-128 { 
+    background: #edcf72; 
+    color: #f9f6f2; 
+    font-size: 28px;
+}
+.tile.tile-256 { 
+    background: #edcc61; 
+    color: #f9f6f2; 
+    font-size: 28px;
+}
+.tile.tile-512 { 
+    background: #edc850; 
+    color: #f9f6f2; 
+    font-size: 28px;
+}
+.tile.tile-1024 { 
+    background: #edc53f; 
+    color: #f9f6f2; 
+    font-size: 24px;
+}
+.tile.tile-2048 { 
+    background: #edc22e; 
+    color: #f9f6f2; 
+    font-size: 24px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.8);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.tile.tile-new {
+    animation: appear 0.2s ease-in-out;
+}
+
+@keyframes appear {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.tile.tile-merged {
+    animation: merge 0.15s ease-in-out;
+}
+
+@keyframes merge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.instructions {
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions p {
+    margin: 10px 0;
+}
+
+.game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.game-over-content {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.game-over-content h2 {
+    color: #776e65;
+    margin-bottom: 20px;
+}
+
+.game-over-content p {
+    margin-bottom: 30px;
+    color: #776e65;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .game-board {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .tile {
+        font-size: 24px;
+    }
+    
+    .tile.tile-128,
+    .tile.tile-256,
+    .tile.tile-512 {
+        font-size: 20px;
+    }
+    
+    .tile.tile-1024,
+    .tile.tile-2048 {
+        font-size: 18px;
+    }
+}

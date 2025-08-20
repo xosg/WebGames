@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minesweeper</h1>
+        
+        <div class="game-header">
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="label">Mines:</span>
+                    <span id="mine-count">10</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Time:</span>
+                    <span id="timer">000</span>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <select id="difficulty">
+                    <option value="beginner">Beginner (9x9, 10 mines)</option>
+                    <option value="intermediate">Intermediate (16x16, 40 mines)</option>
+                    <option value="expert">Expert (30x16, 99 mines)</option>
+                </select>
+                <button id="new-game">New Game</button>
+            </div>
+        </div>
+        
+        <div id="game-board" class="game-board">
+            <!-- Game cells will be generated here -->
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Left click</strong> to reveal a cell</p>
+            <p><strong>Right click</strong> to flag/unflag a mine</p>
+            <p><strong>Goal:</strong> Reveal all cells without mines!</p>
+        </div>
+        
+        <div id="game-over" class="game-over hidden">
+            <div class="game-over-content">
+                <h2 id="game-over-title">Game Over!</h2>
+                <p id="game-over-message">You hit a mine!</p>
+                <button id="restart-game">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

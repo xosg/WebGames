@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Brick Breaker</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Level:</span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Lives:</span>
+                    <span id="lives" class="stat-value">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="game-canvas" width="800" height="600"></canvas>
+            
+            <div id="game-overlay" class="game-overlay hidden">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">Get Ready!</h2>
+                    <p id="overlay-message">Use arrow keys or mouse to move the paddle</p>
+                    <div class="overlay-buttons">
+                        <button id="start-game" class="game-btn">Start Game</button>
+                        <button id="next-level" class="game-btn hidden">Next Level</button>
+                        <button id="restart-game" class="game-btn hidden">Restart Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="desktop-controls">
+                <h3>Desktop Controls</h3>
+                <div class="control-group">
+                    <div class="control-item">
+                        <span class="key">←/→</span>
+                        <span>Move Paddle</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">Mouse</span>
+                        <span>Move Paddle</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">Space</span>
+                        <span>Launch Ball / Pause</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key">R</span>
+                        <span>Restart Game</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-controls">
+                <h3>Touch Controls</h3>
+                <div class="touch-area">
+                    <div class="touch-zone" id="touch-left">
+                        <span>←</span>
+                    </div>
+                    <div class="touch-zone" id="touch-launch">
+                        <span>Launch</span>
+                    </div>
+                    <div class="touch-zone" id="touch-right">
+                        <span>→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="power-ups-info">
+            <h3>Power-ups</h3>
+            <div class="power-up-list">
+                <div class="power-up-item">
+                    <div class="power-up-icon expand"></div>
+                    <span>Expand Paddle</span>
+                </div>
+                <div class="power-up-item">
+                    <div class="power-up-icon multi"></div>
+                    <span>Multi Ball</span>
+                </div>
+                <div class="power-up-item">
+                    <div class="power-up-icon life"></div>
+                    <span>Extra Life</span>
+                </div>
+                <div class="power-up-item">
+                    <div class="power-up-icon slow"></div>
+                    <span>Slow Ball</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

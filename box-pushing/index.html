@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Pushing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <aside id="sidebar">
+            <h3>Levels</h3>
+            <ul id="level-list">
+                <!-- Level list will be populated by JavaScript -->
+            </ul>
+        </aside>
+        <main id="main-content">
+            <h1>Box Pushing Game (Sokoban)</h1>
+            <div id="game-info">
+                <span id="level-display">Level: 1</span>
+                <span id="moves-display">Moves: 0</span>
+            </div>
+            <div id="game-container"></div>
+            <div id="controls">
+                <button onclick="restartGame()">Restart Level</button>
+                <button onclick="previousLevel()">Previous Level</button>
+                <button onclick="nextLevel()">Next Level</button>
+            </div>
+        </main>
+    </div>
+    <script src="levels.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

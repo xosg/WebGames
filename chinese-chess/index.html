@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Chess (Xiangqi)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Chinese Chess</h1>
+            <h2>象棋 (Xiangqi)</h2>
+            <div class="game-status">
+                <div class="current-player">
+                    <span class="player-label">Current Player:</span>
+                    <span id="current-player" class="player-name red">Red (红)</span>
+                </div>
+                <div class="game-controls">
+                    <button id="new-game" class="game-btn">New Game</button>
+                    <button id="undo-move" class="game-btn">Undo</button>
+                    <button id="show-rules" class="game-btn">Rules</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board-container">
+            <div class="captured-pieces">
+                <h3>Captured by Red</h3>
+                <div id="captured-by-red" class="captured-list"></div>
+            </div>
+
+            <div class="board-wrapper">
+                <canvas id="game-board" width="800" height="900"></canvas>
+                <div class="board-coordinates">
+                    <div class="files">
+                        <span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+                    </div>
+                    <div class="ranks">
+                        <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="captured-pieces">
+                <h3>Captured by Black</h3>
+                <div id="captured-by-black" class="captured-list"></div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="move-history">
+                <h3>Move History</h3>
+                <div id="moves-list" class="moves-container"></div>
+            </div>
+
+            <div class="piece-guide">
+                <h3>Piece Guide</h3>
+                <div class="pieces-grid">
+                    <div class="piece-info">
+                        <span class="piece-symbol red">帥</span>
+                        <span class="piece-name">General (King)</span>
+                        <span class="piece-desc">Moves one point within palace</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">仕</span>
+                        <span class="piece-name">Advisor (Guard)</span>
+                        <span class="piece-desc">Moves diagonally within palace</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">相</span>
+                        <span class="piece-name">Elephant (Bishop)</span>
+                        <span class="piece-desc">Moves two points diagonally</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">馬</span>
+                        <span class="piece-name">Horse (Knight)</span>
+                        <span class="piece-desc">Moves in L-shape, can be blocked</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">車</span>
+                        <span class="piece-name">Chariot (Rook)</span>
+                        <span class="piece-desc">Moves any distance horizontally/vertically</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">炮</span>
+                        <span class="piece-name">Cannon</span>
+                        <span class="piece-desc">Moves like rook, captures by jumping</span>
+                    </div>
+                    <div class="piece-info">
+                        <span class="piece-symbol red">兵</span>
+                        <span class="piece-name">Soldier (Pawn)</span>
+                        <span class="piece-desc">Moves forward, sideways after crossing river</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <div class="control-hint">
+                <p>Tap a piece to select, then tap destination to move</p>
+            </div>
+        </div>
+
+        <div id="game-overlay" class="game-overlay hidden">
+            <div class="overlay-content">
+                <h2 id="overlay-title">Game Over</h2>
+                <p id="overlay-message">Checkmate!</p>
+                <div class="overlay-buttons">
+                    <button id="new-game-overlay" class="game-btn">New Game</button>
+                    <button id="close-overlay" class="game-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="rules-overlay" class="rules-overlay hidden">
+            <div class="rules-content">
+                <h2>Chinese Chess Rules</h2>
+                <div class="rules-sections">
+                    <div class="rules-section">
+                        <h3>Objective</h3>
+                        <p>Checkmate the opponent's General (King) by attacking it with no possible escape.</p>
+                    </div>
+                    <div class="rules-section">
+                        <h3>Board Layout</h3>
+                        <p>9×10 board with a river dividing the two sides. Each side has a palace (3×3 area) for the General.</p>
+                    </div>
+                    <div class="rules-section">
+                        <h3>Special Rules</h3>
+                        <ul>
+                            <li><strong>Flying General:</strong> Generals cannot face each other on the same file</li>
+                            <li><strong>Palace:</strong> General and Advisors cannot leave the palace</li>
+                            <li><strong>River:</strong> Elephants cannot cross the river</li>
+                            <li><strong>Cannon:</strong> Must jump over exactly one piece to capture</li>
+                            <li><strong>Horse:</strong> Can be blocked by adjacent pieces</li>
+                        </ul>
+                    </div>
+                </div>
+                <button id="close-rules" class="game-btn">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

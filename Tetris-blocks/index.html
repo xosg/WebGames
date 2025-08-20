@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Blocks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔲 Tetris Blocks</h1>
+        
+        <div class="game-layout">
+            <div class="game-sidebar">
+                <div class="game-info">
+                    <div class="info-panel">
+                        <h3>Score</h3>
+                        <div id="score">0</div>
+                    </div>
+                    <div class="info-panel">
+                        <h3>Level</h3>
+                        <div id="level">1</div>
+                    </div>
+                    <div class="info-panel">
+                        <h3>Lines</h3>
+                        <div id="lines">0</div>
+                    </div>
+                </div>
+                
+                <div class="next-piece">
+                    <h3>Next</h3>
+                    <canvas id="next-canvas" width="120" height="120"></canvas>
+                </div>
+                
+                <div class="hold-piece">
+                    <h3>Hold</h3>
+                    <canvas id="hold-canvas" width="120" height="120"></canvas>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="new-game">New Game</button>
+                    <button id="pause-game">Pause</button>
+                </div>
+            </div>
+            
+            <div class="game-main">
+                <div id="game-canvas-container" class="game-canvas-container">
+                    <canvas id="game-canvas" width="300" height="600"></canvas>
+                    <div id="game-overlay" class="game-overlay hidden">
+                        <div class="overlay-content">
+                            <h2 id="overlay-title">Game Paused</h2>
+                            <p id="overlay-message">Press SPACE or click Resume to continue</p>
+                            <button id="resume-game" class="hidden">Resume</button>
+                            <button id="restart-game" class="hidden">Play Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <div class="instruction-group">
+                <h4>Movement</h4>
+                <p><strong>← →</strong> Move left/right</p>
+                <p><strong>↓</strong> Soft drop</p>
+                <p><strong>Space</strong> Hard drop</p>
+            </div>
+            <div class="instruction-group">
+                <h4>Rotation</h4>
+                <p><strong>↑ / Z</strong> Rotate clockwise</p>
+                <p><strong>X</strong> Rotate counter-clockwise</p>
+            </div>
+            <div class="instruction-group">
+                <h4>Special</h4>
+                <p><strong>C</strong> Hold piece</p>
+                <p><strong>P</strong> Pause</p>
+                <p><strong>R</strong> Restart</p>
+            </div>
+        </div>
+        
+        <div class="mobile-controls">
+            <div class="control-row">
+                <button class="control-btn" data-action="rotate-ccw">↶</button>
+                <button class="control-btn" data-action="rotate-cw">↷</button>
+                <button class="control-btn" data-action="hold">Hold</button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" data-action="left">←</button>
+                <button class="control-btn" data-action="down">↓</button>
+                <button class="control-btn" data-action="right">→</button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" data-action="hard-drop">Drop</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

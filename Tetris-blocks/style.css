@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0 0 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.game-layout {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.game-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 200px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-panel {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.info-panel h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-panel div {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4ECDC4;
+}
+
+.next-piece, .hold-piece {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.next-piece h3, .hold-piece h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#next-canvas, #hold-canvas {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#new-game, #pause-game, #resume-game, #restart-game {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#new-game:hover, #pause-game:hover, #resume-game:hover, #restart-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#pause-game.paused {
+    background: linear-gradient(45deg, #FFA726, #FF7043);
+}
+
+.game-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.game-canvas-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#game-canvas {
+    display: block;
+    background: #000;
+    border: 3px solid #4ECDC4;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.overlay-content h2 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    color: #4ECDC4;
+}
+
+.overlay-content p {
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.instruction-group {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    min-width: 150px;
+}
+
+.instruction-group h4 {
+    margin: 0 0 15px 0;
+    color: #4ECDC4;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instruction-group p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mobile-controls {
+    display: none;
+    margin-top: 20px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 60px;
+}
+
+.control-btn:active {
+    background: rgba(78, 205, 196, 0.5);
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Tetris piece colors */
+.piece-i { background: #00f0f0; } /* Cyan */
+.piece-o { background: #f0f000; } /* Yellow */
+.piece-t { background: #a000f0; } /* Purple */
+.piece-s { background: #00f000; } /* Green */
+.piece-z { background: #f00000; } /* Red */
+.piece-j { background: #0000f0; } /* Blue */
+.piece-l { background: #f0a000; } /* Orange */
+
+/* Game animations */
+@keyframes lineComplete {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.line-complete {
+    animation: lineComplete 0.3s ease-in-out 3;
+}
+
+@keyframes levelUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.level-up {
+    animation: levelUp 0.5s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .game-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .game-sidebar {
+        order: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: auto;
+        max-width: 100%;
+    }
+    
+    .game-info {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .info-panel {
+        padding: 10px;
+        min-width: 80px;
+    }
+    
+    .info-panel div {
+        font-size: 18px;
+    }
+    
+    .next-piece, .hold-piece {
+        padding: 10px;
+    }
+    
+    #next-canvas, #hold-canvas {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #game-canvas {
+        width: 250px;
+        height: 500px;
+    }
+    
+    .instructions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .instruction-group {
+        padding: 15px;
+        min-width: auto;
+    }
+    
+    .mobile-controls {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .game-sidebar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #game-canvas {
+        width: 200px;
+        height: 400px;
+    }
+    
+    .control-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+        min-width: 50px;
+    }
+}

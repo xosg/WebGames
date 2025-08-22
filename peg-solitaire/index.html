@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peg Solitaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Peg Solitaire</h1>
+            <div class="game-status">
+                <span class="score-label">Pegs Left:</span>
+                <span id="pegs" class="score-value">32</span>
+                <button id="restart-btn" class="game-btn">Restart</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <canvas id="game-board" width="350" height="350"></canvas>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Click a peg, then click an empty hole two spaces away to jump and remove a peg.</li>
+                    <li>Try to leave only one peg on the board!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

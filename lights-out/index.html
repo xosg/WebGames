@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Lights Out</h1>
+            <div class="game-status">
+                <span class="score-label">Moves:</span>
+                <span id="moves" class="score-value">0</span>
+                <button id="restart-btn" class="game-btn">Restart</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <div id="game-board" class="board"></div>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Click a light to toggle it and its neighbors.</li>
+                    <li>Turn off all the lights to win!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

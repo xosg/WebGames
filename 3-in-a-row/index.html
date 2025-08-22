@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 in a Row (Tic-Tac-Toe)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>3 in a Row</h1>
+            <div class="game-status">
+                <span id="status-text">Player X's turn</span>
+                <button id="restart-btn" class="game-btn">Restart</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <div id="game-board" class="board"></div>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Take turns placing X and O on the board.</li>
+                    <li>The first to get 3 in a row (horizontally, vertically, or diagonally) wins.</li>
+                    <li>If the board is full and no one wins, it's a draw.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

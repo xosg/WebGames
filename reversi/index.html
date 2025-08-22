@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversi (Othello)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Reversi (Othello)</h1>
+            <div class="game-status">
+                <span class="score-label">Black:</span>
+                <span id="black-score" class="score-value">2</span>
+                <span class="score-label">White:</span>
+                <span id="white-score" class="score-value">2</span>
+                <button id="restart-btn" class="game-btn">Restart</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <canvas id="game-board" width="400" height="400"></canvas>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Click a square to place your disc.</li>
+                    <li>Flip your opponent's discs by trapping them between your own.</li>
+                    <li>The player with the most discs at the end wins!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

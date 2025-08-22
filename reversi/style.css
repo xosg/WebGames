@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+    min-height: 100vh;
+    color: #222;
+    padding: 20px;
+}
+.game-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.97);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.13);
+    padding: 30px;
+    border: 2px solid rgba(67,206,162,0.12);
+}
+.game-header {
+    text-align: center;
+    margin-bottom: 24px;
+    border-bottom: 3px solid #43cea2;
+    padding-bottom: 16px;
+}
+.game-header h1 {
+    font-size: 2rem;
+    color: #43cea2;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.07);
+    font-weight: bold;
+}
+.game-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+.score-label {
+    color: #43cea2;
+    font-weight: bold;
+}
+.score-value {
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #e0f7fa;
+    color: #43cea2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 1px solid #43cea2;
+}
+.game-btn {
+    padding: 8px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #43cea2, #185a9d);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(67,206,162,0.12);
+    background: linear-gradient(45deg, #185a9d, #43cea2);
+}
+.game-btn:active {
+    transform: translateY(0);
+}
+.game-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+.game-board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+#game-board {
+    border: 4px solid #43cea2;
+    border-radius: 10px;
+    background: #e0f7fa;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+}
+.instructions {
+    background: rgba(67,206,162,0.08);
+    border-radius: 15px;
+    padding: 16px;
+    border: 2px solid rgba(67,206,162,0.12);
+    margin-top: 10px;
+}
+.instructions h3 {
+    color: #43cea2;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+.instructions ul {
+    margin-left: 20px;
+    color: #222;
+    font-size: 1rem;
+}

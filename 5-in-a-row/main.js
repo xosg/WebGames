@@ -4,6 +4,7 @@ class Gobang {
         this.ctx = this.canvas.getContext('2d');
         this.size = 15;
         this.cellSize = 40;
+        this.margin = this.cellSize / 2;
         this.board = [];
         this.currentPlayer = 'black';
         this.moveHistory = [];
@@ -23,16 +24,16 @@ class Gobang {
         this.canvas.addEventListener('click', e => {
             if (this.gameOver) return;
             const rect = this.canvas.getBoundingClientRect();
-            const x = Math.round((e.clientX - rect.left) / this.cellSize);
-            const y = Math.round((e.clientY - rect.top) / this.cellSize);
+            const x = Math.round(((e.clientX - rect.left) - this.margin) / this.cellSize);
+            const y = Math.round(((e.clientY - rect.top) - this.margin) / this.cellSize);
             this.handleClick(x, y);
         });
         this.canvas.addEventListener('touchstart', e => {
             if (this.gameOver) return;
             const rect = this.canvas.getBoundingClientRect();
             const touch = e.touches[0];
-            const x = Math.round((touch.clientX - rect.left) / this.cellSize);
-            const y = Math.round((touch.clientY - rect.top) / this.cellSize);
+            const x = Math.round(((touch.clientX - rect.left) - this.margin) / this.cellSize);
+            const y = Math.round(((touch.clientY - rect.top) - this.margin) / this.cellSize);
             this.handleClick(x, y);
         });
         document.getElementById('new-game').addEventListener('click', () => this.newGame());
@@ -81,13 +82,15 @@ class Gobang {
         // Draw grid
         this.ctx.strokeStyle = '#232526';
         for (let i = 0; i < this.size; i++) {
+            // Horizontal lines
             this.ctx.beginPath();
-            this.ctx.moveTo(this.cellSize, this.cellSize * (i + 1));
-            this.ctx.lineTo(this.cellSize * this.size, this.cellSize * (i + 1));
+            this.ctx.moveTo(this.margin, this.margin + i * this.cellSize);
+            this.ctx.lineTo(this.margin + (this.size - 1) * this.cellSize, this.margin + i * this.cellSize);
             this.ctx.stroke();
+            // Vertical lines
             this.ctx.beginPath();
-            this.ctx.moveTo(this.cellSize * (i + 1), this.cellSize);
-            this.ctx.lineTo(this.cellSize * (i + 1), this.cellSize * this.size);
+            this.ctx.moveTo(this.margin + i * this.cellSize, this.margin);
+            this.ctx.lineTo(this.margin + i * this.cellSize, this.margin + (this.size - 1) * this.cellSize);
             this.ctx.stroke();
         }
         // Draw pieces
@@ -95,7 +98,11 @@ class Gobang {
             for (let x = 0; x < this.size; x++) {
                 if (this.board[y][x]) {
                     this.ctx.beginPath();
-                    this.ctx.arc((x + 1) * this.cellSize, (y + 1) * this.cellSize, 15, 0, Math.PI * 2);
+                    this.ctx.arc(
+                        this.margin + x * this.cellSize,
+                        this.margin + y * this.cellSize,
+                        15, 0, Math.PI * 2
+                    );
                     this.ctx.fillStyle = this.board[y][x] === 'black' ? '#232526' : '#fff';
                     this.ctx.strokeStyle = '#232526';
                     this.ctx.lineWidth = 2;

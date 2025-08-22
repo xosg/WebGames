@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Dinosaur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Running Dinosaur</h1>
+            <div class="game-status">
+                <span class="score-label">Score:</span>
+                <span id="score" class="score-value">0</span>
+                <button id="restart-btn" class="game-btn">Restart</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <canvas id="game-canvas" width="900" height="300"></canvas>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Press <b>Space</b> or <b>Up Arrow</b> to jump.</li>
+                    <li>Avoid obstacles by jumping over them.</li>
+                    <li>Survive as long as possible to increase your score!</li>
+                </ul>
+            </div>
+        </div>
+        <div id="game-over" class="game-overlay hidden">
+            <div class="overlay-content">
+                <h2>Game Over</h2>
+                <p id="final-score"></p>
+                <button id="restart-btn-overlay" class="game-btn">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Tile Connect</h1>
+            <div class="game-status">
+                <span class="level-label">Level:</span>
+                <span id="level" class="level-value">1</span>
+                <span class="score-label">Score:</span>
+                <span id="score" class="score-value">0</span>
+                <button id="new-game" class="game-btn">New Game</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <canvas id="game-board" width="480" height="640"></canvas>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Find and connect two matching tiles with a path of up to 3 straight lines.</li>
+                    <li>Clear all tiles to win the level.</li>
+                    <li>Score bonus for quick matches!</li>
+                </ul>
+            </div>
+        </div>
+        <div id="game-overlay" class="game-overlay hidden">
+            <div class="overlay-content">
+                <h2 id="overlay-title">Level Complete!</h2>
+                <p id="overlay-message"></p>
+                <div class="overlay-buttons">
+                    <button id="next-level" class="game-btn">Next Level</button>
+                    <button id="restart-game" class="game-btn">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

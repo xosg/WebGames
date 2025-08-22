@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gobang (Five in a Row)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Gobang (五子棋)</h1>
+            <div class="game-status">
+                <span class="player-label">Current Player:</span>
+                <span id="current-player" class="player-name black">Black ●</span>
+                <button id="new-game" class="game-btn">New Game</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <canvas id="game-board" width="600" height="600"></canvas>
+        </div>
+        <div class="game-info">
+            <div class="move-history">
+                <h3>Move History</h3>
+                <div id="moves-list" class="moves-container"></div>
+            </div>
+        </div>
+        <div id="game-overlay" class="game-overlay hidden">
+            <div class="overlay-content">
+                <h2 id="overlay-title">Game Over</h2>
+                <p id="overlay-message">Winner: Black</p>
+                <div class="overlay-buttons">
+                    <button id="new-game-overlay" class="game-btn">New Game</button>
+                    <button id="close-overlay" class="game-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

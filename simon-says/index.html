@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Simon Says</h1>
+            <div class="game-status">
+                <span class="score-label">Level:</span>
+                <span id="level" class="score-value">1</span>
+                <button id="start-btn" class="game-btn">Start</button>
+            </div>
+        </div>
+        <div class="game-board-container">
+            <div id="game-board" class="board">
+                <div class="color-btn" id="green"></div>
+                <div class="color-btn" id="red"></div>
+                <div class="color-btn" id="yellow"></div>
+                <div class="color-btn" id="blue"></div>
+            </div>
+        </div>
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Watch the sequence of lights and sounds.</li>
+                    <li>Repeat the sequence by clicking the colored buttons.</li>
+                    <li>Each level adds a new color to the sequence.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+body {
+  background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+h1 {
+  color: #f7971e;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.scoreboard {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 12px;
+}
+#game-canvas {
+  background: #fff;
+  border: 2px solid #f7971e;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  max-width: 98vw;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.controls {
+  color: #f7971e;
+  margin-bottom: 24px;
+}
+button {
+  background: #f7971e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #ffd200;
+  color: #333;
+}
+@media (max-width: 500px) {
+  #game-canvas { max-width: 98vw; }
+}

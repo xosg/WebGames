@@ -1,0 +1,66 @@
+body {
+  background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+h1 {
+  color: #185a9d;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 36px);
+  grid-template-rows: repeat(9, 36px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+  background: #185a9d;
+  border-radius: 8px;
+  max-width: 340px;
+}
+.sudoku-cell {
+  background: #fff;
+  border: 1px solid #43cea2;
+  font-size: 1.2em;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  outline: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.sudoku-cell.prefilled {
+  background: #eafaf1;
+  color: #888;
+  font-weight: bold;
+}
+.sudoku-cell.invalid {
+  background: #ffd6d6;
+}
+.controls {
+  margin-bottom: 24px;
+}
+button {
+  background: #43cea2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #185a9d;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .sudoku-board { grid-template-columns: repeat(9, 9vw); grid-template-rows: repeat(9, 9vw); max-width: 98vw; }
+  .sudoku-cell { width: 9vw; height: 9vw; font-size: 4vw; }
+}

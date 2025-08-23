@@ -1,0 +1,97 @@
+body {
+  background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+h1 {
+  color: #185a9d;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.game-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #eafaf1;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 24px 16px 32px 16px;
+}
+#board {
+  margin-bottom: 18px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.slot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #185a9d;
+  margin: 0 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.slot.selected {
+  border: 2px solid #43cea2;
+}
+.feedback {
+  display: flex;
+  margin-left: 12px;
+}
+.feedback-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 1px;
+  background: #bbb;
+}
+.feedback-dot.black {
+  background: #222;
+}
+.feedback-dot.white {
+  background: #fff;
+  border: 1px solid #222;
+}
+#color-palette {
+  margin-bottom: 10px;
+}
+.color-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #43cea2;
+  margin: 0 4px;
+  cursor: pointer;
+  outline: none;
+  transition: border 0.2s;
+}
+.color-btn.selected {
+  border: 2px solid #185a9d;
+}
+button {
+  background: #43cea2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #185a9d;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .game-container { max-width: 98vw; padding: 8vw 2vw 10vw 2vw; }
+  .slot, .color-btn { width: 8vw; height: 8vw; }
+}

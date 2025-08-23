@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Checkers</h1>
+  <div id="game-container">
+    <div id="checkers-board"></div>
+    <div id="info"></div>
+    <section id="game-guide" style="max-width:420px;background:#fffbe7;border-radius:12px;padding:16px 18px 12px 18px;margin:18px auto 0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#444;">
+      <h2 style="color:#f7971e;font-size:1.1em;margin-top:0;">How to Play Checkers</h2>
+      <ul style="padding-left:18px;">
+        <li><b>Objective:</b> Capture all of your opponent's pieces or block them from moving.</li>
+        <li><b>Movement:</b> Pieces move diagonally forward to empty squares. Captures are made by jumping over opponent pieces.</li>
+        <li><b>Kings:</b> Reach the far row to become a king, which can move and capture backward as well.</li>
+        <li><b>Turns:</b> Players alternate turns. Multiple jumps are allowed if available.</li>
+        <li><b>Win:</b> The first player to capture all opponent pieces or block all moves wins.</li>
+      </ul>
+      <div style="font-size:0.97em;color:#888;margin-top:6px;">See README for full rules and tips.</div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

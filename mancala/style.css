@@ -1,0 +1,13 @@
+body { background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+h1 { text-align: center; color: #f7971e; margin-top: 28px; }
+#game-container { display: flex; flex-direction: column; align-items: center; margin-top: 18px; }
+#mancala-board { display: flex; flex-direction: column; align-items: center; margin-bottom: 18px; }
+.row { display: flex; }
+.pit, .store { background: #fffbe7; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.10); margin: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: #b8884b; position: relative; }
+.pit { width: 56px; height: 56px; border: 2.5px solid #b8884b; cursor: pointer; transition: border 0.15s; }
+.pit.selected { border: 2.5px solid #f7971e; }
+.pit.disabled { opacity: 0.5; cursor: not-allowed; }
+.store { width: 56px; height: 140px; border: 2.5px solid #f7971e; }
+.stone { width: 12px; height: 12px; background: #f7971e; border-radius: 50%; margin: 2px; display: inline-block; }
+#info { margin: 8px 0 8px 0; font-size: 1.1em; color: #333; min-height: 24px; }
+@media (max-width: 600px) { .pit, .store { width: 9vw; height: 9vw; min-width: 36px; min-height: 36px; } .store { height: 22vw; min-height: 80px; } }

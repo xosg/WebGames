@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mancala</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Mancala</h1>
+  <div id="game-container">
+    <div id="mancala-board"></div>
+    <div id="info"></div>
+    <section id="game-guide" style="max-width:420px;background:#fffbe7;border-radius:12px;padding:16px 18px 12px 18px;margin:18px auto 0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#444;">
+      <h2 style="color:#f7971e;font-size:1.1em;margin-top:0;">How to Play Mancala</h2>
+      <ul style="padding-left:18px;">
+        <li><b>Objective:</b> Collect the most stones in your Mancala (store) by the end of the game.</li>
+        <li><b>Setup:</b> Each player has 6 pits and a store. All pits start with 4 stones.</li>
+        <li><b>Turn:</b> Pick up all stones from one of your pits and drop them one by one counterclockwise into the next pits and your store.</li>
+        <li><b>Extra Turn:</b> If your last stone lands in your store, you get another turn.</li>
+        <li><b>Capture:</b> If your last stone lands in your empty pit on your side, capture that stone and any in the opposite pit.</li>
+        <li><b>End:</b> Game ends when one side's pits are empty. Remaining stones go to the other player's store. Most stones wins!</li>
+      </ul>
+      <div style="font-size:0.97em;color:#888;margin-top:6px;">See README for full rules and tips.</div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

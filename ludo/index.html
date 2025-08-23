@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ludo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Ludo</h1>
+  <div id="game-container">
+    <canvas id="ludo-board" width="400" height="400"></canvas>
+    <div id="controls">
+      <button id="roll">Roll Dice</button>
+      <span id="dice"></span>
+      <span id="turn"></span>
+    </div>
+    <section id="game-guide" style="max-width:420px;background:#fffbe7;border-radius:12px;padding:16px 18px 12px 18px;margin:18px auto 0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#444;">
+      <h2 style="color:#f7971e;font-size:1.1em;margin-top:0;">How to Play Ludo</h2>
+      <ul style="padding-left:18px;">
+        <li><b>Objective:</b> Move all 4 of your pieces from your base, around the board, and into your home column before your opponents.</li>
+        <li><b>Start:</b> Roll a 6 to move a piece out of your base. Rolling a 6 gives you another turn.</li>
+        <li><b>Movement:</b> Move pieces clockwise according to the dice. Land on an opponent to send them back to base.</li>
+        <li><b>Safe squares</b> (usually marked) cannot be captured. (Some safe spots may not be implemented in this demo.)</li>
+        <li><b>Home:</b> Enter your home column after a full circuit. You must roll the exact number to finish.</li>
+        <li><b>Win:</b> First to get all 4 pieces home wins!</li>
+        <li>This version is for 2-4 players (pass-and-play, no AI).</li>
+      </ul>
+      <div style="font-size:0.97em;color:#888;margin-top:6px;">See README for full rules and tips.</div>
+    </section>
+  </div>
+  <footer></footer>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebGames Collection</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    body { background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; min-height: 100vh; }
+    h1 { color: #fff; text-align: center; margin: 32px 0 18px 0; letter-spacing: 2px; }
+    .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto 48px auto; padding: 0 12px; }
+    .game-cell { background: #fffbe7; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center; padding: 18px 8px 16px 8px; transition: transform 0.15s; text-decoration: none; color: #222; }
+    .game-cell:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.13); }
+    .game-cell img { width: 56px; height: 56px; margin-bottom: 10px; border-radius: 12px; background: #fff; }
+    .game-title { font-size: 1.1em; font-weight: 600; color: #f7971e; margin-bottom: 2px; text-align: center; }
+    .game-desc { font-size: 0.98em; color: #444; text-align: center; min-height: 36px; }
+    @media (max-width: 700px) { .games-grid { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); } }
+  </style>
+</head>
+<body>
+  <h1>WebGames Collection</h1>
+  <div class="games-grid">
+    <!-- GAME CELLS START -->
+    <a class="game-cell" href="2048/index.html"><img src="2048/favicon.svg"><div class="game-title">2048</div><div class="game-desc">Join the numbers to reach 2048!</div></a>
+    <a class="game-cell" href="2048-hex/index.html"><img src="2048-hex/favicon.svg"><div class="game-title">2048 Hex</div><div class="game-desc">2048 on a hexagonal grid.</div></a>
+    <a class="game-cell" href="brick-breaker/index.html"><img src="brick-breaker/favicon.svg"><div class="game-title">Brick Breaker</div><div class="game-desc">Break all the bricks with your paddle.</div></a>
+    <a class="game-cell" href="color-flood/index.html"><img src="color-flood/favicon.svg"><div class="game-title">Color Flood</div><div class="game-desc">Flood the board with one color.</div></a>
+    <a class="game-cell" href="hangman/index.html"><img src="hangman/favicon.svg"><div class="game-title">Hangman</div><div class="game-desc">Guess the hidden word.</div></a>
+    <a class="game-cell" href="lines/index.html"><img src="lines/favicon.svg"><div class="game-title">Color Lines</div><div class="game-desc">Align 5+ balls to clear them.</div></a>
+    <a class="game-cell" href="word-search/index.html"><img src="word-search/favicon.svg"><div class="game-title">Word Search</div><div class="game-desc">Find all the hidden words.</div></a>
+    <a class="game-cell" href="snake-vs-blocks/index.html"><img src="snake-vs-blocks/favicon.svg"><div class="game-title">Snake vs Blocks</div><div class="game-desc">Break blocks, grow your snake.</div></a>
+    <a class="game-cell" href="solitaire/index.html"><img src="solitaire/favicon.svg"><div class="game-title">Solitaire</div><div class="game-desc">Classic Klondike solitaire.</div></a>
+    <a class="game-cell" href="sudoku/index.html"><img src="sudoku/favicon.svg"><div class="game-title">Sudoku</div><div class="game-desc">Fill the grid with 1-9.</div></a>
+    <a class="game-cell" href="tic-tac-toe/index.html"><img src="tic-tac-toe/favicon.svg"><div class="game-title">Tic-Tac-Toe</div><div class="game-desc">Get three in a row.</div></a>
+    <a class="game-cell" href="whack-a-mole/index.html"><img src="whack-a-mole/favicon.svg"><div class="game-title">Whack-a-Mole</div><div class="game-desc">Hit the mole as fast as you can!</div></a>
+    <a class="game-cell" href="mastermind/index.html"><img src="mastermind/favicon.svg"><div class="game-title">Mastermind</div><div class="game-desc">Crack the color code.</div></a>
+    <a class="game-cell" href="space-invaders/index.html"><img src="space-invaders/favicon.svg"><div class="game-title">Space Invaders</div><div class="game-desc">Shoot all the invaders.</div></a>
+    <a class="game-cell" href="go_weiqi/index.html"><img src="go_weiqi/favicon.svg"><div class="game-title">Go (Weiqi)</div><div class="game-desc">Classic 19x19 Go game.</div></a>
+    <a class="game-cell" href="chinese-chess/index.html"><img src="chinese-chess/favicon.svg"><div class="game-title">Chinese Chess</div><div class="game-desc">Play Xiangqi online.</div></a>
+    <a class="game-cell" href="reversi/index.html"><img src="reversi/favicon.svg"><div class="game-title">Reversi</div><div class="game-desc">Flip discs to control the board.</div></a>
+    <a class="game-cell" href="peg-solitaire/index.html"><img src="peg-solitaire/favicon.svg"><div class="game-title">Peg Solitaire</div><div class="game-desc">Jump pegs to clear the board.</div></a>
+    <a class="game-cell" href="lights-out/index.html"><img src="lights-out/favicon.svg"><div class="game-title">Lights Out</div><div class="game-desc">Turn off all the lights.</div></a>
+    <a class="game-cell" href="simon-says/index.html"><img src="simon-says/favicon.svg"><div class="game-title">Simon Says</div><div class="game-desc">Repeat the color sequence.</div></a>
+    <a class="game-cell" href="sliding-puzzle/index.html"><img src="sliding-puzzle/favicon.svg"><div class="game-title">Sliding Puzzle</div><div class="game-desc">Arrange the tiles in order.</div></a>
+    <a class="game-cell" href="connect-four/index.html"><img src="connect-four/favicon.svg"><div class="game-title">Connect Four</div><div class="game-desc">Connect four discs in a row.</div></a>
+    <a class="game-cell" href="memory-match/index.html"><img src="memory-match/favicon.svg"><div class="game-title">Memory Match</div><div class="game-desc">Find all the pairs.</div></a>
+    <a class="game-cell" href="pong/index.html"><img src="pong/favicon.svg"><div class="game-title">Pong</div><div class="game-desc">Classic two-player Pong.</div></a>
+    <a class="game-cell" href="battle-chess/index.html"><img src="battle-chess/favicon.svg"><div class="game-title">Battle Chess</div><div class="game-desc">Chess with a twist.</div></a>
+    <a class="game-cell" href="go/index.html"><img src="go/favicon.svg"><div class="game-title">Go</div><div class="game-desc">Classic Go board game.</div></a>
+    <a class="game-cell" href="minesweeper/index.html"><img src="minesweeper/favicon.svg"><div class="game-title">Minesweeper</div><div class="game-desc">Find all the mines.</div></a>
+    <a class="game-cell" href="maze/index.html"><img src="maze/favicon.svg"><div class="game-title">Maze</div><div class="game-desc">Escape the maze!</div></a>
+    <a class="game-cell" href="box-pushing/index.html"><img src="box-pushing/favicon.svg"><div class="game-title">Box Pushing</div><div class="game-desc">Push boxes to targets.</div></a>
+    <!-- GAME CELLS END -->
+  </div>
+  <footer style="text-align:center;color:#fffbe7;font-size:1em;margin-bottom:18px;">&copy; 2025 xosg &mdash; <a href="https://github.com/xosg/WebGames" style="color:#fffbe7;text-decoration:underline;">GitHub</a></footer>
+</body>
+</html>

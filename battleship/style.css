@@ -1,0 +1,18 @@
+body { background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+h1 { text-align: center; color: #f7971e; margin-top: 28px; }
+#game-container { display: flex; flex-direction: column; align-items: center; margin-top: 18px; }
+#game-board { display: flex; gap: 24px; margin-bottom: 18px; }
+.board-section h3 { text-align: center; color: #b8884b; margin: 0 0 12px 0; }
+.board { display: grid; grid-template: repeat(10, 28px) / repeat(10, 28px); gap: 2px; border: 2px solid #b8884b; border-radius: 8px; padding: 8px; background: #fffbe7; }
+.cell { width: 28px; height: 28px; background: #e8f4f8; border: 1px solid #b8d4da; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.9em; font-weight: bold; }
+.cell.ship { background: #555; color: #fff; }
+.cell.hit { background: #e74c3c; color: #fff; }
+.cell.miss { background: #95a5a6; color: #fff; }
+.cell.sunk { background: #8e44ad; color: #fff; }
+.cell:hover { border: 2px solid #f7971e; }
+#info { margin: 8px 0; font-size: 1.1em; color: #333; min-height: 24px; text-align: center; }
+#controls { display: flex; gap: 12px; margin-bottom: 18px; }
+button { background: #f7971e; color: #fff; border: none; border-radius: 8px; padding: 8px 22px; font-size: 1em; cursor: pointer; transition: background 0.15s; }
+button:hover { background: #ffd200; color: #b8884b; }
+button:disabled { background: #ccc; cursor: not-allowed; }
+@media (max-width: 700px) { #game-board { flex-direction: column; gap: 12px; } .board { grid-template: repeat(10, 5vw) / repeat(10, 5vw); } .cell { width: 5vw; height: 5vw; min-width: 20px; min-height: 20px; } }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Battleship</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Battleship</h1>
+  <div id="game-container">
+    <div id="game-board">
+      <div class="board-section">
+        <h3>Your Fleet</h3>
+        <div id="player-board" class="board"></div>
+      </div>
+      <div class="board-section">
+        <h3>Enemy Waters</h3>
+        <div id="enemy-board" class="board"></div>
+      </div>
+    </div>
+    <div id="info"></div>
+    <div id="controls">
+      <button id="random-setup">Random Setup</button>
+      <button id="start-game">Start Game</button>
+    </div>
+    <section id="game-guide" style="max-width:420px;background:#fffbe7;border-radius:12px;padding:16px 18px 12px 18px;margin:18px auto 0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#444;">
+      <h2 style="color:#f7971e;font-size:1.1em;margin-top:0;">How to Play Battleship</h2>
+      <ul style="padding-left:18px;">
+        <li><b>Objective:</b> Sink all of your opponent's ships before they sink yours.</li>
+        <li><b>Setup:</b> Place your ships on your board. Ships: Carrier (5), Battleship (4), Cruiser (3), Submarine (3), Destroyer (2).</li>
+        <li><b>Gameplay:</b> Take turns guessing coordinates on the enemy board. Hit or miss will be revealed.</li>
+        <li><b>Hits:</b> When you hit a ship, you get to shoot again. When you sink a ship, it's revealed.</li>
+        <li><b>Win:</b> First player to sink all enemy ships wins!</li>
+      </ul>
+      <div style="font-size:0.97em;color:#888;margin-top:6px;">Use "Random Setup" for quick ship placement.</div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

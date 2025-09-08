@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nine Men's Morris</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Nine Men's Morris</h1>
+  <div id="game-container">
+    <canvas id="morris-board" width="400" height="400"></canvas>
+    <div id="info"></div>
+    <button id="restart" style="margin:10px 0 8px 0;padding:7px 22px;border-radius:8px;background:#f7971e;color:#fff;border:none;font-size:1em;cursor:pointer;">Restart</button>
+    <section id="game-guide" style="max-width:420px;background:#fffbe7;border-radius:12px;padding:16px 18px 12px 18px;margin:18px auto 0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#444;">
+      <h2 style="color:#f7971e;font-size:1.1em;margin-top:0;">How to Play Nine Men's Morris</h2>
+      <ul style="padding-left:18px;">
+        <li><b>Objective:</b> Form "mills" (three in a row) to remove your opponent's pieces. Reduce them to two pieces or block all moves to win.</li>
+        <li><b>Setup:</b> Each player has 9 pieces. Players take turns placing pieces on empty points.</li>
+        <li><b>Phase 1:</b> Place your pieces. If you form a mill, remove an opponent's piece.</li>
+        <li><b>Phase 2:</b> Move your pieces to adjacent points. Forming a mill lets you remove an opponent's piece.</li>
+        <li><b>Phase 3:</b> When a player has only 3 pieces left, they can "fly" to any empty point.</li>
+        <li><b>Win:</b> Reduce your opponent to 2 pieces or block all their moves.</li>
+      </ul>
+      <div style="font-size:0.97em;color:#888;margin-top:6px;">See README for full rules and tips.</div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
